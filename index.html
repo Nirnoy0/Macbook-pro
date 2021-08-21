@@ -28,7 +28,7 @@
                 <div class="col-6">   
                     <div class="mb-4">
                         <h1>
-                            Customize your Blue 24-inch iMac with Appe M1 chio.
+                            Customize your Blue 24-inch iMac with Appe M1 chip.
                         </h1>
                         <article>
                             Apple M1 chio with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU and 16-core Neural Engine 8GB unified memory 256GB SSD storage Two Thunderbolt/USE 4 ports Magic Mouse Magic Keyboard US English
@@ -38,10 +38,10 @@
 
                     <div class="mb-4">
                         <h3>Memory</h3>
-                        <button id="8gb-memory-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="memory-8gb" class="badge bg-secondary rounded-pill p-2 m-1">
                             8GB unified memory
                         </button>
-                        <button id="16gb-memry-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="memory-16gb" class="badge bg-secondary rounded-pill p-2 m-1">
                             16GB unified memory
                         </button>
                     </div>
@@ -49,23 +49,23 @@
                     
                     <div class="mb-4">
                         <h3>Storage</h3>
-                        <button id="256gb-storage-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="storage-256gb" class="badge bg-secondary rounded-pill p-2 m-1">
                             256GB SSD Storage
                         </button>
-                        <button id="512gb-storage-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="storage-512gb" class="badge bg-secondary rounded-pill p-2 m-1">
                             512GB SSD Storage
                         </button>
-                        <button id="1tb-storage-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="storage-1tb" class="badge bg-secondary rounded-pill p-2 m-1">
                             1TB SSD Storage
                         </button>
                     </div>
 
                     <div class="mb-4">
                         <h3>Choose your delivey option</h3>
-                        <button id="free-delivery-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="delivery-free" class="badge bg-secondary rounded-pill p-2 m-1">
                             Friday, Aug 25 FREE Prime Delivery
                         </button>
-                        <button id="cost-delivery-btn" class="badge bg-secondary rounded-pill p-2 m-1">
+                        <button id="delivery-fast" class="badge bg-secondary rounded-pill p-2 m-1">
                             Firday, Aug 21 Delivery charge $20
                         </button>
                     </div>
@@ -85,13 +85,13 @@
                                 $<span>1299</span>
                             </h5><hr>                   
                             <h5>
-                                $<span id="extra-memory-cost">0</span>
+                                $<span id="memory-cost">0</span>
                             </h5><hr>
                             <h5>
-                                $<span id="extra-storage-cost">0</span>
+                                $<span id="storage-cost">0</span>
                             </h5><hr>
                             <h5>
-                                $<span id="extra-delivery-cost">0</span>
+                                $<span id="delivery-cost">0</span>
                             </h5><hr class="total-line">
                             <h5>
                                 $<span id="total-cost">1299</span>
@@ -100,8 +100,8 @@
                     </div>
 
                     <div class="input-group mb-3">
-                        <input type="text" class="form-control" placeholder="Add pomo code">
-                        <button id="button-addon2" class="btn btn-outline-secondary" type="button">Apply</button>
+                        <input id="cupon-input" type="text" class="form-control" placeholder="Add Cupon Code">
+                        <button id="cupon-btn" class="btn btn-outline-secondary" type="button">Apply</button>
                       </div>
                 </div>
             </div>
@@ -112,7 +112,7 @@
         <section class="container">
             <hr>
             <h1 class="text-center">
-                Total: $<span>1229</span>
+                Total: $<span id="total-final-cost">1229</span>
             </h1>
         </section>
     </main>

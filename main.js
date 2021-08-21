@@ -1,97 +1,57 @@
+// Extra Price Add Function
+function priceAdd(costID, price) {
+    const preCost = document.getElementById(costID);
+    preCost.innerText = price;
+    totalPrice();
+    return preCost;
+};
 
-//         Extra Memory Cost
+// Total Price Count Function
+function totalPrice() {
+    const memoryCost = document.getElementById('memory-cost');
+    const storageCost = document.getElementById('storage-cost');
+    const deliveryCost = document.getElementById('delivery-cost');
+    const preTotalPrice = document.getElementById('total-cost');
+    const totalPrice = 1299 + parseInt(memoryCost.innerText) + parseInt(storageCost.innerText) + parseInt(deliveryCost.innerText);
+    preTotalPrice.innerText = totalPrice;
+    const totalPriceFinal = document.getElementById('total-final-cost');
+    totalPriceFinal.innerText = totalPrice;
+}
 
+// Function Calling Shortcut Function
+function btnClicked(btnID, costID, price) {
+    document.getElementById(btnID).addEventListener('click', function() {
+        priceAdd(costID, price);
+    });
+};
 
-document.getElementById('8gb-memory-btn').addEventListener('click', function(){
-    const memoryCost = document.getElementById('extra-memory-cost');
-    const MemoryPrice = 0;
-    memoryCost.innerText = parseInt(MemoryPrice);
+// Functions Calling
+btnClicked('memory-8gb', 'memory-cost', 0);
+btnClicked('memory-16gb', 'memory-cost', 180);
+btnClicked('storage-256gb', 'storage-cost', 0);
+btnClicked('storage-512gb', 'storage-cost', 100);
+btnClicked('storage-1tb', 'storage-cost', 180);
+btnClicked('delivery-free', 'delivery-cost', 0);
+btnClicked('delivery-fast', 'delivery-cost', 20);
 
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = MemoryPrice + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
+//Total-final-price Function 
+function finalPriceCupon() {
+    const cuponInput = document.getElementById('cupon-input');
+    const priceFinal = document.getElementById('total-final-cost');
+    const totalPrice = document.getElementById('total-cost');
+    const discount = parseInt(totalPrice.innerText) / 100 * 20;
+    if (cuponInput.value == 'stevekaku') {
+        const totalPriceFinalCupon = parseInt(totalPrice.innerText) - discount;
+        priceFinal.innerText = totalPriceFinalCupon;
+    } else if (cuponInput.value = '') {
 
-document.getElementById('16gb-memry-btn').addEventListener('click', function(){
-    const memoryCost = document.getElementById('extra-memory-cost');
-    const MemoryPrice = 180;
-    memoryCost.innerText = MemoryPrice;
+    } else {
+        alert("Invalid Cupon Code");
+    }
+    cuponInput.value = '';
+};
 
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = MemoryPrice + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
-
-
-
-//         Extra Storage prices
-
-document.getElementById('256gb-storage-btn').addEventListener('click', function(){
-    const storageCost = document.getElementById('extra-storage-cost');
-    const storagePrice = 0;
-    storageCost.innerText = parseInt(storagePrice);
-
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = storagePrice + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
-
-document.getElementById('512gb-storage-btn').addEventListener('click', function(){
-    const storageCost = document.getElementById('extra-storage-cost');
-    const storagePrice = 100;
-    storageCost.innerText = parseInt(storagePrice);
-
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = storagePrice + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
-
-document.getElementById('1tb-storage-btn').addEventListener('click', function(){
-    const storageCost = document.getElementById('extra-storage-cost');
-    const storagePrice = 180;
-    storageCost.innerText = parseInt(storagePrice);
-
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = storagePrice + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
-
-
-
-//               Delivery cost
-document.getElementById('free-delivery-btn').addEventListener('click', function(){
-    const deliveryCost = document.getElementById('extra-delivery-cost');
-    const deliveryAmount = 0;
-    deliveryCost.innerText = parseInt(deliveryAmount);
-
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = deliveryAmount + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
-
-
-document.getElementById('cost-delivery-btn').addEventListener('click', function(){
-    const deliveryCost = document.getElementById('extra-delivery-cost');
-    const deliveryAmount = 20;
-    deliveryCost.innerText = parseInt(deliveryAmount);
-
-    // Update Total Cost
-    const totalCost = document.getElementById('total-cost');
-    const newTotalCostText = totalCost.innerText;
-    const newTotalCost = deliveryAmount + parseInt(newTotalCostText);
-    totalCost.innerText = newTotalCost;
-})
-
-document.getElementById('')
+// Promo Code Apply
+document.getElementById('cupon-btn').addEventListener('click', function() {
+    finalPriceCupon();
+});
